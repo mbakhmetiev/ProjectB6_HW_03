@@ -24,6 +24,15 @@ resource "aws_instance" "vm3-aws" {
   vpc_security_group_ids = [aws_security_group.app.id]
   key_name               = aws_key_pair.app.key_name
 
+  user_data = <<-EOF
+              #!/bin/bash
+              sudo useradd -m -s /usr/bin/bash ansible
+              sudo usermod -aG sudo ansible
+              sudo echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible
+              sudo mkdir /home/ansible/.ssh
+              sudo -u ansible bash -c 'echo "${data.local_file.ansible_pub_key.content}" >> /home/ansible/.ssh/authorized_keys'
+              EOF
+  
   tags = {
     Name = "vm3-aws"
   }
