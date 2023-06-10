@@ -15,6 +15,23 @@
   node_fqdn = [ "ec2-44-202-17-110.compute-1.amazonaws.com", ]
   ```
 - закомитить проект на github и склонировать его на vm1
-- установить terraform и ansible
-- 
+- установить terraform и ansible - файл setup.sh
+- настроить ansible /etc/ansible/ansible.cfg
+  ```bash
+  cat <<eof>> ansible.cfg
+  [defaults]
+  remote_user = ansible
+  host_key_checking = False
+  deprectation_warnings = False
+  gather_facts = False
+
+  [privilege_escalation]
+  become = True
+  become_method = sudo
+  become_user = root
+  become_ask_pass = False
+  eof
+  sudo mv ansible.cfg /etc/ansible/ansible.cfg
+  ```  
+
 

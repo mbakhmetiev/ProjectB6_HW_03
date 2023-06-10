@@ -16,7 +16,7 @@ resource "aws_instance" "vm3-aws" {
   key_name               = aws_key_pair.ansible.key_name
 
   tags = {
-    Name = "vm3-ubu"
+    Name = "vm3-aws"
   }
 }
 resource "aws_key_pair" "ansible" {
@@ -39,4 +39,14 @@ resource "aws_security_group" "instance" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+resource "local_file" "hosts" {
+  content = templatefile("${path.module}/hosts.tpl",
+    {
+      vm2 = aws_instance.vm2-ubu.public_ip
+      vm3 = aws_instance.vm3-aws.public_ip
+    }
+  )
+  filename = "../ansible/inventory"
 }
