@@ -20,12 +20,12 @@ resource "aws_instance" "vm3-aws" {
   }
 }
 resource "aws_key_pair" "app" {
-  key_name   = "ansible-key"
+  key_name   = "app-key"
   public_key = data.local_file.pub_key.content
 }
 
 resource "aws_security_group" "app" {
-  name = "terraform-nodes-instance"
+  name = "terraform-app-nodes-instance"
 
   ingress {
     from_port   = 22
