@@ -24,3 +24,16 @@ become_user = root
 become_ask_pass = False
 eof
 sudo mv ansible.cfg /etc/ansible/ansible.cfg
+
+# create user ansible
+
+sudo useradd -m -s `which bash` ansible
+sudo usermod -aG sudo ansible
+sudo passwd ansible
+sudo -i
+echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible
+visudo -cf !$
+ssh-keygen -b 2048 -t rsa -N "" -f ~/.ssh/id_rsa
+
+
+#
