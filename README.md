@@ -14,7 +14,5 @@
   $ terraform output
   node_fqdn = [ "ec2-44-202-17-110.compute-1.amazonaws.com", ]
   ```
-- xcv  
+- закомитить проект на github и склонировать его на vm1
 
-
-    
