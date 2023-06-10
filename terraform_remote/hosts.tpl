@@ -5,6 +5,5 @@ localhost
 localhost
 
 [app]
-%{ for ip in hosts ~}
-${ip}
-%{ endfor ~}
+${vm2}
+${vm3}
