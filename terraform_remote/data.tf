@@ -30,5 +30,5 @@ data "aws_subnets" "default" {
 }
 
 data "local_file" "pub_key" {
-  filename = "/home/mbakhmetiev/.ssh/id_rsa.pub"
+  filename = "/home/ubuntu/.ssh/id_rsa.pub"
 }

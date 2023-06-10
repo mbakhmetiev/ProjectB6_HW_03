@@ -1,4 +1,7 @@
-output "node_fqdn" {
-  value       = aws_instance.vm1-ubu.*.public_dns
-  description = "The domain name of the load balancer"
+output "vm2_fqdn" {
+  value       = aws_instance.vm2-ubu.*.public_dns
+}
+
+output "vm3_fqdn" {
+  value       = aws_instance.vm3-aws.*.public_dns
 }
