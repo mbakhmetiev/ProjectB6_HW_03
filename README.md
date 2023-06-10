@@ -15,4 +15,6 @@
   node_fqdn = [ "ec2-44-202-17-110.compute-1.amazonaws.com", ]
   ```
 - закомитить проект на github и склонировать его на vm1
+- установить terraform и ansible
+- 
 
