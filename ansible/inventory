@@ -1,0 +1,9 @@
+[database]
+localhost
+
+[web]
+localhost
+
+[app]
+44.203.53.166
+44.201.86.119

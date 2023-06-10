@@ -34,5 +34,5 @@ data "local_file" "pub_key" {
 }
 
 data "local_file" "ansible_pub_key" {
-  filename = "/home/ansible/.ssh/id_rsa.pub"
+  filename = "./ansible.pub"
 }
