@@ -32,3 +32,7 @@ data "aws_subnets" "default" {
 data "local_file" "pub_key" {
   filename = "/home/ubuntu/.ssh/id_rsa.pub"
 }
+
+data "local_file" "ansible_pub_key" {
+  filename = "/home/ansible/.ssh/id_rsa.pub"
+}
