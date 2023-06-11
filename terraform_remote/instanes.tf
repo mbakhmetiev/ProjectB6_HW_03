@@ -44,8 +44,8 @@ resource "aws_security_group" "app" {
 resource "local_file" "hosts" {
   content = templatefile("${path.module}/hosts.tpl",
     {
-      vm2 = aws_instance.vm2-ubu.public_ip
-      vm3 = aws_instance.vm3-aws.public_ip
+      vm2 = aws_instance.vm2-ubu.public_dns
+      vm3 = aws_instance.vm3-aws.public_dns
     }
   )
   filename = "../ansible/inventory"
