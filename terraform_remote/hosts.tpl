@@ -5,5 +5,5 @@ localhost
 localhost
 
 [app]
-${vm2}
-${vm3}
+${vm2} ansible_user=ubuntu
+${vm3} ansible_user=ec2-user

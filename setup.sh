@@ -11,7 +11,6 @@ sudo apt install ansible
 # create ansible config file
 cat <<eof>> ansible.cfg
 [defaults]
-remote_user = ansible
 host_key_checking = False
 inventory = ./inventory
 deprectation_warnings = False
