@@ -1,5 +1,5 @@
 ---
-- name: insta docker at app hosts
+- name: install docker at app hosts
   hosts: app
   roles:
     - docker

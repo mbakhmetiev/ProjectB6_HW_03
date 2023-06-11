@@ -1,4 +1,6 @@
 ---
-- name: Install Docker
+- name: Install Docker on ubuntu
+  when: invetntory_hostname == "{{ ec2-34-205-129-46.compute-1.amazonaws.com }}"
   include_tasks:
     file: docker.yml
+    when:
