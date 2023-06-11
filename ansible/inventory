@@ -1,5 +1,5 @@
 [database]
-localhost
+localhost postgresql_version=12 postgresql_data_dir="/var/lib/postgresql/12/main"
 
 [web]
 localhost

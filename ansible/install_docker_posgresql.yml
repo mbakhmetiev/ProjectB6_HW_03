@@ -2,4 +2,13 @@
 - name: install docker at app hosts
   hosts: app
   roles:
-    - docker
+    - roles/docker
+
+- name: install postgresql on database hosts
+  hosts: database
+  roles:
+    - roles/geerlingguy.postgresql
+  vars:
+    - postgresql_data_dir: "{{ hostvars['database'].postgresql_data_dir }}"
+    - postgresql_version: "{{ hostvars['database'].postgresql_version }}"
+
