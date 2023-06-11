@@ -5,5 +5,5 @@ localhost
 localhost
 
 [app]
-44.203.53.166
-44.201.86.119
+ec2-34-205-129-46.compute-1.amazonaws.com ansible_user=ubuntu
+ec2-52-91-80-170.compute-1.amazonaws.com ansible_user=ec2-user
