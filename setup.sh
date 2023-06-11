@@ -32,6 +32,7 @@ sudo passwd ansible
 sudo -i
 echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible
 visudo -cf !$
+exit # back to ansible user
 ssh-keygen -b 2048 -t rsa -N "" -f ~/.ssh/id_rsa
 
 

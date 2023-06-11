@@ -1,0 +1,5 @@
+---
+- name: insta docker at app hosts
+  hosts: app
+  roles:
+    - docker
